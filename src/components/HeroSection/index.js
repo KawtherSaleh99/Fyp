@@ -24,7 +24,7 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4"></VideoBg>
       </HeroBg>
       <HeroContent>
-        <HeroH1>hi</HeroH1>
+        <HeroH1>We guide you through</HeroH1>
         <HeroP>Find your postgraduates courses in IIUM</HeroP>
         <HeroBtnWrapper>
           <Button to="signup" onMouseEnter={onHover} onMouseLeave={onHover}
