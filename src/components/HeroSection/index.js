@@ -27,9 +27,13 @@ const HeroSection = () => {
         <HeroH1>We guide you through</HeroH1>
         <HeroP>Find your postgraduates courses in IIUM</HeroP>
         <HeroBtnWrapper>
-          <Button to="signup" onMouseEnter={onHover} onMouseLeave={onHover}
-          primary= 'true'
-          dark= 'true'>
+          <Button
+            to="about"
+            onMouseEnter={onHover}
+            onMouseLeave={onHover}
+            primary="true"
+            dark="true"
+          >
             Get started {hover ? <ArrowForward /> : <ArrowRight />}
           </Button>
         </HeroBtnWrapper>
