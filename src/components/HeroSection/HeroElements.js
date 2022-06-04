@@ -6,9 +6,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 padding: 0 30px;
-height 800px;
+height: 900px; // added
 position: relative;
-z-index: 
+z-index: 1;
 
 /* add before styles */
 
