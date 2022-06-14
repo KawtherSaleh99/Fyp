@@ -11,7 +11,16 @@ import {
   LiCircles,
 } from "../../components/programmes/animationElements";
 import departments from "./departments";
-
+import {
+  Box,
+  Flex,
+  Link,
+  chakra,
+  IconButton,
+  Center,
+  keyframes,
+  Button,
+} from "@chakra-ui/react";
 const ProgrammesPage = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -20,13 +29,14 @@ const ProgrammesPage = () => {
     setIsOpen(!isOpen);
   };
   return (
-    <>
+    <Box bg="black">
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <NavBar toggle={toggle} />
-      {departments.map((department) => (
-        <Card department={department}></Card>
-      ))}
-
+      <Box py={50} bg="#edf3f8">
+        {departments.map((department) => (
+          <Card department={department}></Card>
+        ))}
+      </Box>
       <Circles>
         <LiCircles></LiCircles>
         <LiCircles></LiCircles>
@@ -39,8 +49,9 @@ const ProgrammesPage = () => {
         <LiCircles></LiCircles>
         <LiCircles></LiCircles>
       </Circles>
+
       <Footer></Footer>
-    </>
+    </Box>
   );
 };
 

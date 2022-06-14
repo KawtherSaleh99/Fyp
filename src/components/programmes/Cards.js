@@ -1,4 +1,4 @@
-import React from "react";
+import { React, useState } from "react";
 import {
   Box,
   Flex,
@@ -7,9 +7,10 @@ import {
   IconButton,
   Center,
   keyframes,
+  Button,
 } from "@chakra-ui/react";
-import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import { Button } from "../ButtonElement";
+import { ChakraProvider } from "@chakra-ui/react";
+// import { Button } from "../ButtonElement";
 import { MdDoubleArrow } from "react-icons/md";
 import SmallCard from "./SmallCard";
 
@@ -23,6 +24,10 @@ const animationKeyframes = keyframes`
 const animation = `${animationKeyframes} 5s ease-in-out`;
 
 export default function Card({ department }) {
+  const [isToggled, setIsToggled] = useState(false);
+  const onToggle = () => {
+    setIsToggled(!isToggled);
+  };
   return (
     <>
       <ChakraProvider>
@@ -74,15 +79,16 @@ export default function Card({ department }) {
               <Center>
                 <Box mt={8}>
                   <IconButton
-                    // colorScheme="teal"
+                    zIndex="2"
+                    onClick={onToggle}
                     aria-label="Call Segun"
-                    // size="lg"
+                    size="md"
                     animation={animation}
                     icon={
                       <MdDoubleArrow
                         color="#00DCDC"
-                        size="xl"
                         style={{ transform: "rotate(90deg)" }}
+                        size="xl"
                       />
                     }
                   />
@@ -92,9 +98,15 @@ export default function Card({ department }) {
           </Box>
         </Flex>
       </ChakraProvider>
-      {department.programmes.map((programme) => (
-        <SmallCard programme={programme}></SmallCard>
-      ))}
+      <div style={{ transition: "all 0.3s ease-in-out" }}>
+        {isToggled ? (
+          department.programmes.map((programme) => (
+            <SmallCard programme={programme}></SmallCard>
+          ))
+        ) : (
+          <></>
+        )}
+      </div>
     </>
   );
 }
