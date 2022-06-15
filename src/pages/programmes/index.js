@@ -7,29 +7,42 @@ import {
 } from "../../components/programmes/animationElements";
 import departments from "./departments";
 import { Box } from "@chakra-ui/react";
+import Sidebar from "../../components/Sidebar";
+import { Nav } from "../../components/NavBar/NavBarElements";
+import NavBar from "../../components/NavBar";
 const ProgrammesPage = () => {
-  return (
-    <Box bg="black">
-      <Box py={50} bg="#edf3f8">
-        {departments.map((department) => (
-          <Card department={department}></Card>
-        ))}
-      </Box>
-      <Circles>
-        <LiCircles></LiCircles>
-        <LiCircles></LiCircles>
-        <LiCircles></LiCircles>
-        <LiCircles></LiCircles>
-        <LiCircles></LiCircles>
-        <LiCircles></LiCircles>
-        <LiCircles></LiCircles>
-        <LiCircles></LiCircles>
-        <LiCircles></LiCircles>
-        <LiCircles></LiCircles>
-      </Circles>
+  const [isOpen, setIsOpen] = useState(false);
 
-      <Footer></Footer>
-    </Box>
+  const toggle = () => {
+    console.log("hi");
+    setIsOpen(!isOpen);
+  };
+  return (
+    <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <NavBar toggle={toggle} />
+      <Box bg="black">
+        <Box py={50} bg="#edf3f8">
+          {departments.map((department) => (
+            <Card department={department}></Card>
+          ))}
+        </Box>
+        <Circles>
+          <LiCircles></LiCircles>
+          <LiCircles></LiCircles>
+          <LiCircles></LiCircles>
+          <LiCircles></LiCircles>
+          <LiCircles></LiCircles>
+          <LiCircles></LiCircles>
+          <LiCircles></LiCircles>
+          <LiCircles></LiCircles>
+          <LiCircles></LiCircles>
+          <LiCircles></LiCircles>
+        </Circles>
+
+        <Footer></Footer>
+      </Box>
+    </>
   );
 };
 
