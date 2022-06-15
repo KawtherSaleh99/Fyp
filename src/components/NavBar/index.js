@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { FaBars } from "react-icons/fa";
 import {
   Nav,
@@ -13,6 +13,7 @@ import {
 } from "./NavBarElements";
 
 const NavBar = ({ toggle }) => {
+  const [scrollNav, setScrollNav] = useState(false)
   return (
     <>
       <Nav>
