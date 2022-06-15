@@ -13,7 +13,7 @@ import {
 } from "./NavBarElements";
 
 const NavBar = ({ toggle }) => {
-  const [scrollNav, setScrollNav] = useState(false)
+  const [scrollNav, setScrollNav] = useState(false);
   return (
     <>
       <Nav>
@@ -32,12 +32,9 @@ const NavBar = ({ toggle }) => {
             <NavItem>
               <NavLinks to="staff">Staff</NavLinks>
             </NavItem>
-            <NavItem>
-              <NavLinks to="apply">Apply now</NavLinks>
-            </NavItem>
           </NavMenu>
           <NavBtn>
-            <NavBtnLink to="/signin">Sign In</NavBtnLink>
+            <NavBtnLink to="apply">Apply now</NavBtnLink>
           </NavBtn>
         </NavBarContainer>
       </Nav>
