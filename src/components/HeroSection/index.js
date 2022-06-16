@@ -24,8 +24,12 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4"></VideoBg>
       </HeroBg>
       <HeroContent>
-        <HeroH1>We guide you through</HeroH1>
-        <HeroP>Find your postgraduates courses in IIUM</HeroP>
+        <HeroH1>Find IIUM postgraduate courses
+           through a comprehensive guide
+        </HeroH1>
+        <HeroP>We will guide you through the postgraduate course 
+          application process from start to finish
+        </HeroP>
         <HeroBtnWrapper>
           <Button
             to="about"

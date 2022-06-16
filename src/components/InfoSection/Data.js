@@ -3,10 +3,10 @@ export const homeObjOne = {
   lightBg: false,
   lightText: true,
   lightTextDesc: true,
-  topLine: "Premium Bank",
-  headLine: "Unlimited Transaction with zero fees",
+  topLine: "About",
+  headLine: "Postgraduate studies generally provide a route to a particular career and knowledge specialisation.",
   description:
-    "Get access to our exclusive app that allows you to send unlimited transaction without getting charged any fees.",
+    "the Postgraduate Office of KICT works together with the offering academic departments including Department of Information Systems (DIS), Department of Computer Science (DCS), Department of Library and Information Sciences (DLIS), and Centre for Information Technology Advancement (CITA).",
   buttonLabel: "Get started",
   imgStart: false,
   img: require("../../images/svg-1.svg").default,
