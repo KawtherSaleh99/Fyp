@@ -23,7 +23,12 @@ import AddProgramme from "./pages/admin/AddProgramme";
 
 function App() {
   const [user, loading] = useAuthState(auth);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggle = () => {
+    console.log("hi");
+    setIsOpen(!isOpen);
+  };
   function PrivateRoute({ component: Component, ...rest }) {
     const isLogged = user;
     if (loading) {
@@ -35,10 +40,27 @@ function App() {
 
   return (
     <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <NavBar toggle={toggle} />
       <Routes>
         <Route path="/" element={<Home />} exact />
         <Route path="/signin" element={<SignIn />} exact />
         <Route path="/programme" element={<ProgrammesPage />} exact />
+        <Route
+          path="/departments/computer-science"
+          element={<ProgrammesPage />}
+          exact
+        />
+        <Route
+          path="/departments/library-infromation-science"
+          element={<ProgrammesPage />}
+          exact
+        />
+        <Route
+          path="/departments/nfromation-systems"
+          element={<ProgrammesPage />}
+          exact
+        />
 
         <Route
           exact
