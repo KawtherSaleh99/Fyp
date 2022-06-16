@@ -1,5 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+
 import {
   GoogleAuthProvider,
   getAuth,
@@ -9,7 +10,12 @@ import {
   sendPasswordResetEmail,
   signOut,
 } from "firebase/auth";
-import { getFirestore } from "firebase/firestore";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  Timestamp,
+} from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyB39Qugns5JbqZPUktQP3mBdc5U-aw-GXA",
@@ -47,4 +53,28 @@ const sendPasswordReset = async (email) => {
 const logout = () => {
   signOut(auth);
 };
-export { auth, db, logInWithEmailAndPassword, sendPasswordReset, logout };
+///////////////////////////////
+const addStaff = async (email, name, department) => {
+  console.log(db);
+  console.log("hi");
+  try {
+    await addDoc(collection(db, "staff"), {
+      name: name,
+      email: email,
+      department: department,
+      created: Timestamp.now(),
+    });
+  } catch (err) {
+    console.error(err);
+    alert(err.message);
+  }
+};
+
+export {
+  auth,
+  db,
+  logInWithEmailAndPassword,
+  sendPasswordReset,
+  logout,
+  addStaff,
+};
