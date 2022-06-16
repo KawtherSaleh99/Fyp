@@ -1,20 +1,10 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  chakra,
-  IconButton,
-  ChakraProvider,
-} from "@chakra-ui/react";
+import { Box, Flex, Link, chakra, IconButton, Center } from "@chakra-ui/react";
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { Button } from "../ButtonElement";
-import { useNavigate } from "react-router-dom";
 import { ChevronRightIcon } from "@chakra-ui/icons";
 
 export default function SmallCard({ programme }) {
-  const navigate = useNavigate();
-
-  console.log("programme.accordionTitle ---> ", programme?.accordionTitle);
-  // const navigate =  useNavigate()
   return (
     <ChakraProvider>
       <Flex bg="#edf3f8" w="full" alignItems="center" justifyContent="center">
@@ -40,7 +30,7 @@ export default function SmallCard({ programme }) {
               //   _dark={{ color: "white" }}
               fontWeight="normal"
             >
-              {programme?.title}
+              {programme.title}
             </chakra.h5>
             <chakra.p
               mt={4}
@@ -50,9 +40,6 @@ export default function SmallCard({ programme }) {
           </Box>
           <Box mr={8} py={2}>
             <IconButton
-              onClick={() => {
-                navigate(`/departments/${programme?.accordionTitle}`);
-              }}
               // colorScheme="teal"
               aria-label="Call Segun"
               _hover={{ bgColor: "orange.500" }}

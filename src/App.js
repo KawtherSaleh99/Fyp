@@ -20,7 +20,6 @@ import SignIn from "./pages/auth";
 import Dashboard from "./pages/admin/index";
 import AddStaff from "./pages/admin/AddStaff";
 import AddProgramme from "./pages/admin/AddProgramme";
-import { Departments } from "./pages/departments";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -53,13 +52,13 @@ function App() {
           exact
         />
         <Route
-          path="/departments/dcs"
-          element={<Departments title="dcs" />}
+          path="/departments/library-infromation-science"
+          element={<ProgrammesPage />}
           exact
         />
         <Route
-          path="/departments/mcs"
-          element={<Departments title="mcs" />}
+          path="/departments/nfromation-systems"
+          element={<ProgrammesPage />}
           exact
         />
 

@@ -1,28 +1,19 @@
 const departments = [
   {
     title: "Department of Information Systems",
-    accordionTitle: "",
     description:
       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidemodi reprehenderit vitae exercitationem aliquid dolores ullam temporibus enim expedita aperiam mollitia iure consectetur dictatenetur, porro consequuntur saepe accusantium consequatur.",
     image: "https://www.ecpi.edu/sites/default/files/MS%20Tech%20Sept%2025.png",
     programmes: [
-      {
-        title: "Master in Information Technology (Coursework)",
-        accordionTitle: "",
-      },
-      {
-        title: "Master in Information Technology (Mixed-mode)",
-        accordionTitle: "",
-      },
+      { title: "Master in Information Technology (Coursework)" },
+      { title: "Master in Information Technology (Mixed-mode)" },
       {
         title:
           "Master of Computing (Computer Science & Information Technology) (Research)",
-        accordionTitle: "",
       },
       {
         title:
           "Doctor of Philosophy in Computing (Computer Science & Information Technology)",
-        accordionTitle: "",
       },
     ],
   },
@@ -33,14 +24,8 @@ const departments = [
     image:
       "https://www.city.ac.uk/__data/assets/image/0005/587768/varieties/breakpoint-max.jpg",
     programmes: [
-      {
-        title: "Doctor of Philosophy in Computer Science (by Research)",
-        accordionTitle: "dcs",
-      },
-      {
-        title: "Master of Computer Science (by Research)",
-        accordionTitle: "mcs",
-      },
+      { title: "Doctor of Philosophy in Computer Science (by Research)" },
+      { title: "Master of Computer Science (by Research)" },
     ],
   },
   {
@@ -50,14 +35,8 @@ const departments = [
     image: "https://lis.catholic.edu/_media/2018-photos-LIS/OrgofInfo1200.jpg",
 
     programmes: [
-      {
-        accordionTitle: "",
-        title: "Master of Library & Information Science",
-      },
-      {
-        accordionTitle: "",
-        title: "Doctor of Philosophy (Library and Information Science)",
-      },
+      { title: "Master of Library & Information Science" },
+      { title: "Doctor of Philosophy (Library and Information Science)" },
     ],
   },
 ];

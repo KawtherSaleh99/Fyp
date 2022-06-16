@@ -97,16 +97,16 @@ export default function Card({ department }) {
             </Box>
           </Box>
         </Flex>
-        <div style={{ transition: "all 0.3s ease-in-out" }}>
-          {isToggled ? (
-            department.programmes.map((programme) => (
-              <SmallCard programme={programme}></SmallCard>
-            ))
-          ) : (
-            <></>
-          )}
-        </div>
       </ChakraProvider>
+      <div style={{ transition: "all 0.3s ease-in-out" }}>
+        {isToggled ? (
+          department.programmes.map((programme) => (
+            <SmallCard programme={programme}></SmallCard>
+          ))
+        ) : (
+          <></>
+        )}
+      </div>
     </>
   );
 }

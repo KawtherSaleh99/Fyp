@@ -25,7 +25,7 @@ const ProgrammesPage = () => {
             <Card department={department}></Card>
           ))}
         </Box>
-        {/* <Circles>
+        <Circles>
           <LiCircles></LiCircles>
           <LiCircles></LiCircles>
           <LiCircles></LiCircles>
@@ -36,7 +36,7 @@ const ProgrammesPage = () => {
           <LiCircles></LiCircles>
           <LiCircles></LiCircles>
           <LiCircles></LiCircles>
-        </Circles> */}
+        </Circles>
 
         <Footer></Footer>
       </Box>
