@@ -22,24 +22,13 @@ import { AiFillEdit, AiTwotoneLock } from "react-icons/ai";
 import { BsBoxArrowUpRight, BsFillTrashFill } from "react-icons/bs";
 import { db } from "../../firebase";
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
-import { deleteStaff, deleteProgramme } from "../../firebase";
+import { deleteStaff } from "../../firebase";
 export default function Dashboard() {
   const [staff, setStaff] = useState([]);
-  const [programmes, setProgrammes] = useState([]); 
   useEffect(() => {
     const q = query(collection(db, "staff"), orderBy("created", "desc"));
     onSnapshot(q, (querySnapshot) => {
       setStaff(
-        querySnapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      );
-    });
-
-    const p = query(collection(db, "programmes"), orderBy("created", "desc"));
-    onSnapshot(p, (querySnapshot) => {
-      setProgrammes(
         querySnapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
@@ -75,9 +64,7 @@ export default function Dashboard() {
               bg={{ md: bg }}
               shadow="lg"
             >
-              {programmes.map((token, tid) => {
-                console.log("token ---> ",token)
-                const {data} = token;
+              {data.map((token, tid) => {
                 return (
                   <Flex
                     direction={{ base: "row", md: "column" }}
@@ -96,7 +83,7 @@ export default function Dashboard() {
                       fontSize="md"
                       fontWeight="hairline"
                     >
-                      <span>Programme</span>
+                      <span>Progrmme</span>
                       <span>Department</span>
                       <chakra.span textAlign={{ md: "right" }}>
                         Actions
@@ -110,13 +97,13 @@ export default function Dashboard() {
                       px={10}
                       fontWeight="hairline"
                     >
-                      <span>{data.name}</span>
+                      <span>{token.name}</span>
                       <chakra.span
                         textOverflow="ellipsis"
                         overflow="hidden"
                         whiteSpace="nowrap"
                       >
-                        {data.department}
+                        {token.department}
                       </chakra.span>
 
                       <Flex justify={{ md: "end" }}>
@@ -126,9 +113,6 @@ export default function Dashboard() {
                             variant="outline"
                             icon={<BsFillTrashFill />}
                             aria-label="Delete"
-                            onClick={() => {
-                              deleteProgramme(token.id);
-                            }}
                           />
                         </ButtonGroup>
                       </Flex>
