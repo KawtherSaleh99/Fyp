@@ -29,8 +29,7 @@ const InfoSection = ({
   alt,
   primary,
   dark,
-  dark2,
-  link,
+  dark2
 }) => {
   return (
     <>
@@ -44,10 +43,7 @@ const InfoSection = ({
                 <Subtitle darkText={darkText}>{description}</Subtitle>
                 <BtnWrap>
                   <Button
-                    onClick={() => {
-                      window.location.href = link;
-                    }}
-                    // to={}
+                    to="home"
                     smooth={true}
                     duration={500}
                     spy={true}
