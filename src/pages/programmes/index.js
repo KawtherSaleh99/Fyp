@@ -19,6 +19,8 @@ const ProgrammesPage = () => {
   };
   return (
     <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <NavBar toggle={toggle} />
       <Box bg="black">
         <Box py={50} bg="#edf3f8">
           {departments.map((department) => (

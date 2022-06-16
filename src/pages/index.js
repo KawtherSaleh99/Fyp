@@ -15,8 +15,16 @@ import Sidebar from "../components/Sidebar";
 import NavBar from "../components/NavBar";
 
 const Home = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggle = () => {
+    console.log("hi");
+    setIsOpen(!isOpen);
+  };
   return (
     <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <NavBar toggle={toggle} />
       <HeroSection />
       <InfoSection {...homeObjOne} />
       <InfoSection {...homeObjTwo} />
