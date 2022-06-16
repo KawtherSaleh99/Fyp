@@ -15,6 +15,8 @@ import {
   collection,
   addDoc,
   Timestamp,
+  deleteDoc,
+  doc,
 } from "firebase/firestore";
 
 const firebaseConfig = {
@@ -70,6 +72,14 @@ const addStaff = async (email, name, department) => {
   }
 };
 
+const deleteStaff = async (id) => {
+  const staffDocRef = doc(db, "staff", id);
+  try {
+    await deleteDoc(staffDocRef);
+  } catch (err) {
+    alert(err);
+  }
+};
 export {
   auth,
   db,
@@ -77,4 +87,5 @@ export {
   sendPasswordReset,
   logout,
   addStaff,
+  deleteStaff,
 };

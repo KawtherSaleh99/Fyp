@@ -22,10 +22,9 @@ import { AiFillEdit, AiTwotoneLock } from "react-icons/ai";
 import { BsBoxArrowUpRight, BsFillTrashFill } from "react-icons/bs";
 import { db } from "../../firebase";
 import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
-
+import { deleteStaff } from "../../firebase";
 export default function Dashboard() {
   const [staff, setStaff] = useState([]);
-  console.log(staff);
   useEffect(() => {
     const q = query(collection(db, "staff"), orderBy("created", "desc"));
     onSnapshot(q, (querySnapshot) => {
@@ -193,6 +192,9 @@ export default function Dashboard() {
                             variant="outline"
                             icon={<BsFillTrashFill />}
                             aria-label="Delete"
+                            onClick={() => {
+                              deleteStaff(token.id);
+                            }}
                           />
                         </ButtonGroup>
                       </Flex>
