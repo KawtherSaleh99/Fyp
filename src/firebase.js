@@ -80,33 +80,6 @@ const deleteStaff = async (id) => {
     alert(err);
   }
 };
-
-/////////////////////////////////
-const addProgramme = async ( name, department, description) => {
-  console.log(db);
-  console.log("hi");
-  try {
-    await addDoc(collection(db, "programmes"), {
-      name,
-      description,
-      department,
-      created: Timestamp.now(),
-    });
-  } catch (err) {
-    console.error(err);
-    alert(err.message);
-  }
-};
-
-const deleteProgramme = async (id) => {
-  const programDocRef = doc(db, "programmes", id);
-  try {
-    await deleteDoc(programDocRef);
-  } catch (err) {
-    alert(err);
-  }
-};
-
 export {
   auth,
   db,
@@ -115,6 +88,4 @@ export {
   logout,
   addStaff,
   deleteStaff,
-  addProgramme,
-  deleteProgramme
 };
