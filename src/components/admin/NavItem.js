@@ -17,6 +17,7 @@ export default function NavItem({
   active,
   navSize,
   to,
+  onClick,
 }) {
   return (
     <Flex
@@ -39,7 +40,7 @@ export default function NavItem({
             }}
             w={navSize == "large" && "100%"}
           >
-            <MenuButton w="100%">
+            <MenuButton w="100%" onClick={onClick}>
               <Flex>
                 <Icon
                   as={icon}

@@ -15,10 +15,12 @@ import {
   FiDollarSign,
   FiBriefcase,
   FiSettings,
+  FiLogOut,
 } from "react-icons/fi";
 import { IoPawOutline } from "react-icons/io5";
 import NavItem from "./NavItem";
 import { useLocation } from "react-router-dom";
+import { logout } from "../../firebase";
 
 export default function Sidebar() {
   const location = useLocation();
@@ -74,6 +76,15 @@ export default function Sidebar() {
           title="Add Programme"
           to="/addProgramme "
           active={location.pathname === "/addProgramme"}
+        />
+        <NavItem
+          navSize={navSize}
+          icon={FiLogOut}
+          title="Logout"
+          to="/signin"
+          onClick={() => {
+            logout();
+          }}
         />
       </Flex>
 

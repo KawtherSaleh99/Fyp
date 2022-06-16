@@ -36,7 +36,12 @@ const SignIn = () => {
             <NavLogo to="/">pguide</NavLogo>
           </div>
           <FormContent>
-            <Form action="#">
+            <Form
+              onSubmit={(e) => {
+                e.preventDefault();
+                logInWithEmailAndPassword(email, password);
+              }}
+            >
               <FormH1>Sign in to your account</FormH1>
               <FormLabel htmlFor="for">Email</FormLabel>
               <FormInput
@@ -56,14 +61,10 @@ const SignIn = () => {
                 onChange={(e) => setPassword(e.target.value)}
                 placeholder="Password"
               />
-              <FormButton
-                onClick={() => logInWithEmailAndPassword(email, password)}
-              >
-                Continue
-              </FormButton>
-              <Link to="/reset">
+              <FormButton type="submit">Continue</FormButton>
+              {/* <Link to="/reset">
                 <Text>Forgot Password</Text>
-              </Link>
+              </Link> */}
             </Form>
           </FormContent>
         </FormWrap>
