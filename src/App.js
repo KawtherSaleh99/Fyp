@@ -19,6 +19,7 @@ import Sidebar from "./components/Sidebar";
 import SignIn from "./pages/auth";
 import Dashboard from "./pages/admin/index";
 import AddStaff from "./pages/admin/AddStaff";
+import AddProgramme from "./pages/admin/AddProgramme";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -46,13 +47,13 @@ function App() {
         />
         <Route
           exact
-          path="/staff"
+          path="/dashboard/staff"
           element={<PrivateRoute component={AddStaff} />}
         />
         <Route
           exact
-          path="/addProgramme"
-          element={<PrivateRoute component={AddStaff} />}
+          path="/dashboard/addProgramme"
+          element={<PrivateRoute component={AddProgramme} />}
         />
       </Routes>
     </>
