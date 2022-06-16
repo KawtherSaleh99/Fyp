@@ -67,15 +67,15 @@ export default function Sidebar() {
           navSize={navSize}
           icon={FiCalendar}
           title="Add Staff"
-          to="/staff"
-          active={location.pathname === "/staff"}
+          to="/dashboard/staff"
+          active={location.pathname === "/dashboard/staff"}
         />
         <NavItem
           navSize={navSize}
           icon={FiUser}
           title="Add Programme"
-          to="/addProgramme "
-          active={location.pathname === "/addProgramme"}
+          to="/dashboard/addProgramme"
+          active={location.pathname === "/dashboard/addProgramme"}
         />
         <NavItem
           navSize={navSize}

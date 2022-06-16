@@ -19,15 +19,13 @@ const ProgrammesPage = () => {
   };
   return (
     <>
-      <Sidebar isOpen={isOpen} toggle={toggle} />
-      <NavBar toggle={toggle} />
       <Box bg="black">
         <Box py={50} bg="#edf3f8">
           {departments.map((department) => (
             <Card department={department}></Card>
           ))}
         </Box>
-        <Circles>
+        {/* <Circles>
           <LiCircles></LiCircles>
           <LiCircles></LiCircles>
           <LiCircles></LiCircles>
@@ -38,7 +36,7 @@ const ProgrammesPage = () => {
           <LiCircles></LiCircles>
           <LiCircles></LiCircles>
           <LiCircles></LiCircles>
-        </Circles>
+        </Circles> */}
 
         <Footer></Footer>
       </Box>

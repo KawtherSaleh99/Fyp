@@ -14,6 +14,8 @@ export const homeObjOne = {
   dark: true,
   primary: true,
   darkText: false,
+  link: "localhost:3000/home",
+  // buttonText:""
 };
 
 export const homeObjTwo = {
@@ -32,6 +34,8 @@ export const homeObjTwo = {
   dark: false,
   primary: false,
   darkText: true,
+  link: "localhost:3000/home",
+  // buttonText:""
 };
 
 export const homeObjThree = {
@@ -43,13 +47,15 @@ export const homeObjThree = {
   headLine: "Unlimited Transaction with zero fees",
   description:
     "Get access to our exclusive app that allows you to send unlimited transaction without getting charged any fees.",
-  buttonLabel: "Start Now",
+  buttonLabel: "Apply now",
   imgStart: false,
   img: require("../../images/svg-3.svg").default,
   alt: "Paper",
   dark: false,
   primary: false,
   darkText: true,
+  link: "http://eadmission.iium.edu.my/index.php/student/eas_login",
+  // buttonText: "",
 };
 
 export const homeObjFour = {
@@ -68,4 +74,6 @@ export const homeObjFour = {
   dark: true,
   primary: true,
   darkText: false,
+  link: "localhost:3000/home",
+  // buttonText:""
 };

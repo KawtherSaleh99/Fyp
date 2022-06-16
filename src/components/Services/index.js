@@ -11,25 +11,39 @@ import {
   ServicesH2,
   ServicesP,
 } from "./ServicesElements";
+
+import { useNavigate } from "react-router-dom";
 const Services = () => {
+  let navigate = useNavigate();
   return (
     <ServicesContainer id="services">
-      <ServicesH1>Our Programmes</ServicesH1>
+      <ServicesH1>Departments</ServicesH1>
       <ServicesWrapper>
-        <ServicesCard>
+        <ServicesCard
+          onClick={() => {
+            navigate("/departments/computer-science");
+          }}
+        >
           <ServicesIcon src={Icon1} />
           <ServicesH2>Department of Computer Sciences</ServicesH2>
-          
         </ServicesCard>
-        <ServicesCard>
+        <ServicesCard
+          onClick={() => {
+            //redirect to the department page
+            navigate("/departments/library-infromation-science");
+          }}
+        >
           <ServicesIcon src={Icon2} />
-          <ServicesH2>Department of Computer Sciences</ServicesH2>
-          
+          <ServicesH2>Department of Library and Information Science</ServicesH2>
         </ServicesCard>
-        <ServicesCard>
+        <ServicesCard
+          onClick={() => {
+            //redirect to the department page
+            navigate("/departments/infromation-systems");
+          }}
+        >
           <ServicesIcon src={Icon3} />
-          <ServicesH2>Department of Computer Sciences</ServicesH2>
-          
+          <ServicesH2>Department of Infromation System</ServicesH2>
         </ServicesCard>
       </ServicesWrapper>
     </ServicesContainer>

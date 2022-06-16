@@ -8,6 +8,7 @@ import {
   NavMenu,
   NavItem,
   NavLinks,
+  NavButton,
   NavBtn,
   NavBtnLink,
 } from "./NavBarElements";
@@ -24,17 +25,25 @@ const NavBar = ({ toggle }) => {
           </MobileIcon>
           <NavMenu>
             <NavItem>
-              <NavLinks to="about">About</NavLinks>
+              <NavButton to="about">About</NavButton>
+            </NavItem>
+            <NavItem>
+              <NavButton to="staff">Staff</NavButton>
+            </NavItem>
+            <NavItem>
+              <NavButton to="services">Departments</NavButton>
             </NavItem>
             <NavItem>
               <NavLinks to="programme">Programmes</NavLinks>
             </NavItem>
             <NavItem>
-              <NavLinks to="staff">Staff</NavLinks>
+              <NavButton to="apply">Apply</NavButton>
             </NavItem>
           </NavMenu>
-          <NavBtn>
-            <NavBtnLink to="apply">Apply now</NavBtnLink>
+          <NavBtn hidden>
+            <NavBtnLink hidden to="apply">
+              Apply now
+            </NavBtnLink>
           </NavBtn>
         </NavBarContainer>
       </Nav>

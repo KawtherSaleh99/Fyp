@@ -19,10 +19,17 @@ import Sidebar from "./components/Sidebar";
 import SignIn from "./pages/auth";
 import Dashboard from "./pages/admin/index";
 import AddStaff from "./pages/admin/AddStaff";
+import AddProgramme from "./pages/admin/AddProgramme";
+import { Departments } from "./pages/departments";
 
 function App() {
   const [user, loading] = useAuthState(auth);
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggle = () => {
+    console.log("hi");
+    setIsOpen(!isOpen);
+  };
   function PrivateRoute({ component: Component, ...rest }) {
     const isLogged = user;
     if (loading) {
@@ -34,10 +41,27 @@ function App() {
 
   return (
     <>
+      <Sidebar isOpen={isOpen} toggle={toggle} />
+      <NavBar toggle={toggle} />
       <Routes>
         <Route path="/" element={<Home />} exact />
         <Route path="/signin" element={<SignIn />} exact />
         <Route path="/programme" element={<ProgrammesPage />} exact />
+        <Route
+          path="/departments/computer-science"
+          element={<ProgrammesPage />}
+          exact
+        />
+        <Route
+          path="/departments/dcs"
+          element={<Departments title="dcs" />}
+          exact
+        />
+        <Route
+          path="/departments/mcs"
+          element={<Departments title="mcs" />}
+          exact
+        />
 
         <Route
           exact
@@ -46,13 +70,13 @@ function App() {
         />
         <Route
           exact
-          path="/staff"
+          path="/dashboard/staff"
           element={<PrivateRoute component={AddStaff} />}
         />
         <Route
           exact
-          path="/addProgramme"
-          element={<PrivateRoute component={AddStaff} />}
+          path="/dashboard/addProgramme"
+          element={<PrivateRoute component={AddProgramme} />}
         />
       </Routes>
     </>
