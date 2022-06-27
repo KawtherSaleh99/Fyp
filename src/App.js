@@ -21,6 +21,7 @@ import Dashboard from "./pages/admin/index";
 import AddStaff from "./pages/admin/AddStaff";
 import AddProgramme from "./pages/admin/AddProgramme";
 import { Departments } from "./pages/departments";
+import StaffPage from "./pages/staff/index";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -47,6 +48,7 @@ function App() {
         <Route path="/" element={<Home />} exact />
         <Route path="/signin" element={<SignIn />} exact />
         <Route path="/programme" element={<ProgrammesPage />} exact />
+        <Route path="/staff" element={<StaffPage />} exact />
         <Route
           path="/departments/computer-science"
           element={<ProgrammesPage />}

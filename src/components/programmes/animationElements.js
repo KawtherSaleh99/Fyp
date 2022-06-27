@@ -10,10 +10,7 @@ export const Circles = styled.ul`
 `;
 
 export const Area = styled.div`
-  background: #fffff;
-  background: -webkit-linear-gradient(to left, #8f94fb, #4e54c8);
-  width: 100%;
-  height: 100vh;
+  position: absolute;
 `;
 export const LiCircles = styled.li`
   position: absolute;
