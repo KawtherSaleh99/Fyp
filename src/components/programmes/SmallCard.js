@@ -13,10 +13,8 @@ import { ChevronRightIcon } from "@chakra-ui/icons";
 export default function SmallCard({ programme }) {
   const navigate = useNavigate();
 
-  console.log("programme.accordionTitle ---> ", programme?.accordionTitle);
-  // const navigate =  useNavigate()
   return (
-    <ChakraProvider>
+    <ChakraProvider resetCSS={false}>
       <Flex bg="#edf3f8" w="full" alignItems="center" justifyContent="center">
         <Box
           bg="white"
@@ -51,7 +49,7 @@ export default function SmallCard({ programme }) {
           <Box mr={8} py={2}>
             <IconButton
               onClick={() => {
-                navigate(`/departments/${programme?.accordionTitle}`);
+                navigate(`/courses/${programme?.accordionTitle}`);
               }}
               // colorScheme="teal"
               aria-label="Call Segun"

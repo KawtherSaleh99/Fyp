@@ -12,6 +12,9 @@ import {
   ArrowForward,
   ArrowRight,
 } from "./HeroElements";
+import { NavButton } from "../NavBar/NavBarElements";
+import { HashLink } from "react-router-hash-link";
+
 const HeroSection = () => {
   const [hover, setHover] = useState(false);
 
@@ -24,23 +27,25 @@ const HeroSection = () => {
         <VideoBg autoPlay loop muted src={Video} type="video/mp4"></VideoBg>
       </HeroBg>
       <HeroContent>
-        <HeroH1>Find IIUM postgraduate courses
-           through a comprehensive guide
+        <HeroH1>
+          Find IIUM postgraduate courses through a comprehensive guide
         </HeroH1>
-        <HeroP>We will guide you through the postgraduate course 
-          application process from start to finish
+        <HeroP>
+          We will guide you through the postgraduate course application process
+          from start to finish
         </HeroP>
-        <HeroBtnWrapper>
-          <Button
-            to="about"
-            onMouseEnter={onHover}
-            onMouseLeave={onHover}
-            primary="true"
-            dark="true"
-          >
-            Get started {hover ? <ArrowForward /> : <ArrowRight />}
-          </Button>
-        </HeroBtnWrapper>
+        <HashLink style={{ textDecoration: "none" }} to="/#about">
+          <HeroBtnWrapper>
+            <Button
+              onMouseEnter={onHover}
+              onMouseLeave={onHover}
+              primary="true"
+              dark="true"
+            >
+              Get started {hover ? <ArrowForward /> : <ArrowRight />}
+            </Button>
+          </HeroBtnWrapper>
+        </HashLink>
       </HeroContent>
     </HeroContainer>
   );

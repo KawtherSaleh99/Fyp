@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { ChakraProvider, Grid, GridItem, Box } from "@chakra-ui/react";
 import StaffCard from "./StaffCard";
 import staff from "./staffData";
@@ -8,6 +8,10 @@ import {
   LiCircles,
 } from "../../components/programmes/animationElements";
 const StaffPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <Box bg="#edf3f8">
       <Box mb={100} py={80} bg="#edf3f8">

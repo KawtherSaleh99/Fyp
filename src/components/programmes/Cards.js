@@ -30,7 +30,7 @@ export default function Card({ department }) {
   };
   return (
     <>
-      <ChakraProvider>
+      <ChakraProvider resetCSS={false}>
         <Flex
           bg="#edf3f8"
           pt={50}

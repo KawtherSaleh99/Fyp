@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Footer from "../../components/Footer";
 import Card from "../../components/programmes/Cards";
 import {
@@ -12,6 +12,9 @@ import { Nav } from "../../components/NavBar/NavBarElements";
 import NavBar from "../../components/NavBar";
 const ProgrammesPage = () => {
   const [isOpen, setIsOpen] = useState(false);
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const toggle = () => {
     console.log("hi");
@@ -37,7 +40,6 @@ const ProgrammesPage = () => {
           <LiCircles></LiCircles>
           <LiCircles></LiCircles>
         </Circles> */}
-
         <Footer></Footer>
       </Box>
     </>

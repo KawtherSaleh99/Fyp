@@ -8,21 +8,21 @@ const departments = [
     programmes: [
       {
         title: "Master in Information Technology (Coursework)",
-        accordionTitle: "",
+        accordionTitle: "dis1",
       },
       {
         title: "Master in Information Technology (Mixed-mode)",
-        accordionTitle: "",
+        accordionTitle: "dis2",
       },
       {
         title:
           "Master of Computing (Computer Science & Information Technology) (Research)",
-        accordionTitle: "",
+        accordionTitle: "dis3",
       },
       {
         title:
           "Doctor of Philosophy in Computing (Computer Science & Information Technology)",
-        accordionTitle: "",
+        accordionTitle: "dis4",
       },
     ],
   },
@@ -35,11 +35,11 @@ const departments = [
     programmes: [
       {
         title: "Doctor of Philosophy in Computer Science (by Research)",
-        accordionTitle: "dcs",
+        accordionTitle: "dcs1",
       },
       {
         title: "Master of Computer Science (by Research)",
-        accordionTitle: "mcs",
+        accordionTitle: "dcs2",
       },
     ],
   },
@@ -51,11 +51,11 @@ const departments = [
 
     programmes: [
       {
-        accordionTitle: "",
+        accordionTitle: "is1",
         title: "Master of Library & Information Science",
       },
       {
-        accordionTitle: "",
+        accordionTitle: "is2",
         title: "Doctor of Philosophy (Library and Information Science)",
       },
     ],

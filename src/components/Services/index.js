@@ -16,7 +16,7 @@ import { useNavigate } from "react-router-dom";
 const Services = () => {
   let navigate = useNavigate();
   return (
-    <ServicesContainer id="services">
+    <ServicesContainer id="departments">
       <ServicesH1>Departments</ServicesH1>
       <ServicesWrapper>
         <ServicesCard

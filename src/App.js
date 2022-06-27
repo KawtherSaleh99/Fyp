@@ -20,7 +20,7 @@ import SignIn from "./pages/auth";
 import Dashboard from "./pages/admin/index";
 import AddStaff from "./pages/admin/AddStaff";
 import AddProgramme from "./pages/admin/AddProgramme";
-import { Departments } from "./pages/departments";
+import { Courses } from "./pages/courses/index";
 import StaffPage from "./pages/staff/index";
 
 function App() {
@@ -45,26 +45,23 @@ function App() {
       <Sidebar isOpen={isOpen} toggle={toggle} />
       <NavBar toggle={toggle} />
       <Routes>
+        ////////////////////////////////////////////////////////////
         <Route path="/" element={<Home />} exact />
         <Route path="/signin" element={<SignIn />} exact />
         <Route path="/programme" element={<ProgrammesPage />} exact />
         <Route path="/staff" element={<StaffPage />} exact />
-        <Route
-          path="/departments/computer-science"
-          element={<ProgrammesPage />}
-          exact
-        />
-        <Route
-          path="/departments/dcs"
-          element={<Departments title="dcs" />}
-          exact
-        />
-        <Route
-          path="/departments/mcs"
-          element={<Departments title="mcs" />}
-          exact
-        />
-
+        ////////////////////////////////////////////////////////////
+        <Route path="/courses/dis1" element={<Courses title="dis1" />} exact />
+        <Route path="/courses/dis2" element={<Courses title="dis2" />} exact />
+        <Route path="/courses/dis3" element={<Courses title="dis3" />} exact />
+        <Route path="/courses/dis4" element={<Courses title="dis4" />} exact />
+        ////////////////////////////////////////////////////////////
+        <Route path="/courses/dcs1" element={<Courses title="dcs1" />} exact />
+        <Route path="/courses/dcs2" element={<Courses title="dcs2" />} exact />
+        ////////////////////////////////////////////////////////////
+        <Route path="/courses/is1" element={<Courses title="is1" />} exact />
+        <Route path="/courses/is2" element={<Courses title="is2" />} exact />
+        ////////////////////////////////////////////////////////////
         <Route
           exact
           path="/dashboard"

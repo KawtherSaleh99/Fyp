@@ -26,7 +26,7 @@ export default function AddProgramme() {
   const navigate = useNavigate();
 
   return (
-    <ChakraProvider>
+    <ChakraProvider resetCSS={false}>
       <Flex w="full" h="calc(100vh)" m={0} bg="#edf3f8">
         <Box bg="#000">
           <Sidebar />

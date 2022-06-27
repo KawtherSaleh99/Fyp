@@ -13,14 +13,13 @@ import {
 import { MdEmail, MdHeadset, MdLocationOn } from "react-icons/md";
 import { AiTwotonePhone } from "react-icons/ai";
 
-import { BsFillBriefcaseFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 
 const StaffCard = ({ staff }) => {
   let navigate = useNavigate();
 
   return (
-    <ChakraProvider>
+    <ChakraProvider resetCSS={false}>
       <Flex
         bg="#edf3f8"
         p={50}

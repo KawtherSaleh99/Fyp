@@ -25,7 +25,7 @@ import { collection, query, orderBy, onSnapshot } from "firebase/firestore";
 import { deleteStaff, deleteProgramme } from "../../firebase";
 export default function Dashboard() {
   const [staff, setStaff] = useState([]);
-  const [programmes, setProgrammes] = useState([]); 
+  const [programmes, setProgrammes] = useState([]);
   useEffect(() => {
     const q = query(collection(db, "staff"), orderBy("created", "desc"));
     onSnapshot(q, (querySnapshot) => {
@@ -59,7 +59,7 @@ export default function Dashboard() {
   const bg3 = useColorModeValue("gray.100", "gray.700");
 
   return (
-    <ChakraProvider>
+    <ChakraProvider resetCSS={false}>
       <Flex w="full" h="calc(100vh)" m={0} bg="#edf3f8">
         <Box bg="#000">
           <Sidebar />
@@ -76,8 +76,8 @@ export default function Dashboard() {
               shadow="lg"
             >
               {programmes.map((token, tid) => {
-                console.log("token ---> ",token)
-                const {data} = token;
+                console.log("token ---> ", token);
+                const { data } = token;
                 return (
                   <Flex
                     direction={{ base: "row", md: "column" }}
