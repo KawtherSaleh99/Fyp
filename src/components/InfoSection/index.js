@@ -14,6 +14,7 @@ import {
   Img,
   ImgWrap,
 } from "./InfoElements";
+import { useNavigate } from "react-router-dom";
 
 const InfoSection = ({
   lightBg,
@@ -32,6 +33,8 @@ const InfoSection = ({
   dark2,
   link,
 }) => {
+  const navigate = useNavigate();
+
   return (
     <>
       <InfoContainer lightBg={lightBg} id={id}>
@@ -45,7 +48,8 @@ const InfoSection = ({
                 <BtnWrap>
                   <Button
                     onClick={() => {
-                      window.location.href = link;
+                      if (link[0] === "h") window.location.href = link;
+                      else navigate(link);
                     }}
                     // to={}
                     smooth={true}

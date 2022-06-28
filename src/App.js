@@ -22,6 +22,7 @@ import AddStaff from "./pages/admin/AddStaff";
 import AddProgramme from "./pages/admin/AddProgramme";
 import { Courses } from "./pages/courses/index";
 import StaffPage from "./pages/staff/index";
+import About from "./pages/about";
 
 function App() {
   const [user, loading] = useAuthState(auth);
@@ -50,6 +51,7 @@ function App() {
         <Route path="/signin" element={<SignIn />} exact />
         <Route path="/programme" element={<ProgrammesPage />} exact />
         <Route path="/staff" element={<StaffPage />} exact />
+        <Route path="/about" element={<About />} exact />
         ////////////////////////////////////////////////////////////
         <Route path="/courses/dis1" element={<Courses title="dis1" />} exact />
         <Route path="/courses/dis2" element={<Courses title="dis2" />} exact />
